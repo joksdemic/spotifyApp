@@ -80,20 +80,32 @@
 spotifyBackend
 *****************************
 Install all dependencies
+
     npm init
+
     npm install cloudinary cors dotenv express mongoose multer nodemon
+
     Update package.json
 *******************************
 Create folder structure for spofityBackend
+
     Inside spotifyBackend folder create .env file and src folder.
+
     Inside src folder create config, controllers, middleware, models, routes.
 *******************************
 Create API: Set up Express server with CORS and basic route
+
     Inside server.js create API
+
     Start server: node server.js
 ******************************
 Test API
+
     Install Thunder Client extension
+
     New Request ---> GET ---> http://localhost:4000 ---> SEND
+
     If it is not working add PORT=4000 in .env
+******************************
+Set up configuration for Cloudinary and MongoDB
 ******************************
