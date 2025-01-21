@@ -109,3 +109,18 @@ Test API
 ******************************
 Set up configuration for Cloudinary and MongoDB
 ******************************
+Create a songModel
+******************************
+Create an albumModel
+*****************************
+Add songs into database with Cloudinary upload
+****************************
+Remove songs from database
+*****************************
+Add albums into database with Cloudinary upload
+*****************************
+Get all album data from listAlbum functionality
+****************************
+Remove albums from the database
+***************************
+**************************
