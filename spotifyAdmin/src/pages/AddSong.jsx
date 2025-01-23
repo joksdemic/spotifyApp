@@ -36,38 +36,34 @@ const AddSong = () => {
       } else {
         toast.error("Something went wrong!");
       }
-      
     } catch (error) {
       toast.error("Error occured");
     }
     setLoading(false);
   };
 
-  const loadAlbumData = async() => {
+  const loadAlbumData = async () => {
     try {
       const response = await axios.get(`${url}/api/album/list`);
-      if(response.data.success) {
+      if (response.data.success) {
         setAlbumData(response.data.albums);
-      }else{
-        toast.error("Unable to load albums data")
+      } else {
+        toast.error("Unable to load albums data");
       }
     } catch (error) {
       toast.error("Error occur");
     }
-  }
+  };
 
-  useEffect(()=>{
+  useEffect(() => {
     loadAlbumData();
-  },[])
+  }, []);
 
   return loading ? (
     <div className="grid place-items-center min-h-[80vh]">
-        <div className="w-16 h-16 place-self-center border-4 border-gray-400 border-t-green-800 rounded-full animate-spin">
-
-        </div>
-
+      <div className="w-16 h-16 place-self-center border-4 border-gray-400 border-t-green-800 rounded-full animate-spin"></div>
     </div>
-  ) :(
+  ) : (
     <form
       onSubmit={onSubmitHandler}
       className="flex flex-col items-start gap-8 text-gray-600"
@@ -141,7 +137,11 @@ const AddSong = () => {
           className="bg-transparent outline-green-600 border-2 border-gray-400 p-2.5 w-[150px]"
         >
           <option value="none">None</option>
-          {albumData.map((item, index) => (<option key={index} value={item.name}>{item.name}</option>))}
+          {albumData.map((item, index) => (
+            <option key={index} value={item.name}>
+              {item.name}
+            </option>
+          ))}
         </select>
       </div>
       <button

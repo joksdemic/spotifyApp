@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import Navbar from "./Navbar";
 import { useParams } from "react-router-dom";
 import { assets } from "../assets/assets";
