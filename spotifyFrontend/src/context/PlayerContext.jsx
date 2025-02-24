@@ -15,14 +15,16 @@ const PlayerContextProvider = (props) => {
   const [playStatus, setPlayStatus] = useState(false);
   const [time, setTime] = useState({
     currentTime: {
-      second: 0,
-      minute: 0,
+      second: "00",
+      minute: "00",
     },
     totalTime: {
       second: 0,
       minute: 0,
     },
   });
+
+  const formatTime = (value) => (value < 10 ? `0${value}` : value);
 
   const play = () => {
     audioRef.current.play();
@@ -92,12 +94,12 @@ const PlayerContextProvider = (props) => {
           ) + "%";
         setTime({
           currentTime: {
-            second: Math.floor(audioRef.current.currentTime % 60),
-            minute: Math.floor(audioRef.current.currentTime / 60),
+            second: formatTime(Math.floor(audioRef.current.currentTime % 60)),
+            minute: formatTime(Math.floor(audioRef.current.currentTime / 60)),
           },
           totalTime: {
-            second: Math.floor(audioRef.current.duration % 60),
-            minute: Math.floor(audioRef.current.duration / 60),
+            second: formatTime(Math.floor(audioRef.current.currentTime % 60)),
+            minute: formatTime(Math.floor(audioRef.current.currentTime / 60)),
           },
         });
       };
